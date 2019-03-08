@@ -13,10 +13,12 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import 'hammerjs';
+import { CatalogComponent } from './catalog/catalog.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CatalogComponent
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
