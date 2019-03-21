@@ -6,16 +6,16 @@
      fxLayoutGap="10px"
      fxLayoutGap.xs="0">
   <div fxFlex="40">
-    <div fxFlex *ngIf="selectedItem">
+    <div fxFlex *ngIf="item">
       <mat-card>
         <mat-card-title-group>
           <mat-card-title>
-            <h3>{{selectedItem.name | uppercase}}</h3>
+            <h3>{{item.name | uppercase}}</h3>
           </mat-card-title>
         </mat-card-title-group>
-        <img matCardImage src={{selectedItem.image}} alt={{selectedItem.name}}>
+        <img matCardImage src={{item.image}} alt={{item.name}}>
         <mat-card-content>
-          <p>{{selectedItem.description}}
+          <p>{{item.description}}
           </p>
         </mat-card-content>
         <mat-card-actions align="start">
@@ -29,7 +29,7 @@
   <div fxFlex="auto" >
     <h3>Comments</h3>
     <mat-list>
-      <mat-list-item *ngFor="let comment of selectedItem.comments">
+      <mat-list-item *ngFor="let comment of item.comments">
         <p matLine>{{comment.comment}}</p><br/>
         <p matLine>{{comment.rating}} Stars</p><br/>
         <p matLine>--{{comment.author}} {{comment.date | date}}</p><br/>
