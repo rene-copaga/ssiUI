@@ -1,6 +1,8 @@
 import {Comment} from './Comment';
 
 export class Item {
+  id: number;
+  featured: boolean;
   name: string;
   image: string;
   category: string;
