@@ -1,5 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Item} from '../shared/Item';
+import {ItemService} from '../services/item.service';
+import { Params, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-item-detail',
@@ -11,9 +14,18 @@ export class ItemDetailComponent implements OnInit {
   @Input()
   item: Item;
 
-  constructor() { }
+  constructor(private itemService: ItemService,
+              private route: ActivatedRoute,
+              private location: Location) { }
 
   ngOnInit() {
+    const id = +this.route.snapshot.params['id'];
+    this.item = this.itemService.getItem(id);
   }
+
+  goBack(): void {
+    this.location.back();
+  }
+
 
 }
