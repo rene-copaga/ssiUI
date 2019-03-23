@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div fxFlex>
+  <div fxFlex *ngIf="items">
     <!--binding del dom al property del objeto
     [propiedadDelComponente]="valorDesdeElDOM"
     bind-propiedadDelComponente="valorDesdeElDOM"
@@ -23,6 +23,9 @@
         </mat-grid-tile-footer>
       </mat-grid-tile>
     </mat-grid-list>
+  </div>
+  <div [hidden]="items">
+    <mat-spinner></mat-spinner><h4>Loading . . . Please Wait</h4>
   </div>
 <!--
   <app-item-detail [item]="selectedItem"></app-item-detail>
